@@ -18,5 +18,14 @@ module WeatherApp
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.autoload_paths += %W(#{config.root}/lib)
+    config.hosts.clear
+
+    if !Rails.env.test?
+      config.after_initialize do
+        service_weather = Services::Weather.new.import_data
+      end
+    end
   end
 end
