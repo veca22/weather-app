@@ -24,7 +24,11 @@ module WeatherApp
 
     if !Rails.env.test?
       config.after_initialize do
-        service_weather = Services::Weather.new.import_data
+        begin
+          Services::Weather.new.import_data
+        rescue
+          false
+        end
       end
     end
   end
