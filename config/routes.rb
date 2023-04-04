@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :cities do
     collection do 
       get :sorted
+      post :average_temperatures
     end
   end
 end

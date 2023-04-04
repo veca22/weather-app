@@ -12,6 +12,13 @@ RSpec.describe CitiesController, type: :controller do
     end
   end
 
+  describe "POST average_temperatures" do
+    it 'returns a successful response with cities and average temperatures' do
+      post :average_temperatures
+      expect(response).to be_successful
+    end
+  end
+
   describe "GET sorted" do
     it 'returns a successful response with sorted cities' do
       get :sorted

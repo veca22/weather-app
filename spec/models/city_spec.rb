@@ -19,5 +19,13 @@ RSpec.describe City, :type => :model do
         expect(sorted_cities).to eq City.order(average_temperature: :desc)
       end
     end
+
+    describe '#average_temperatures' do
+      it 'should return cities with average temperature' do
+        cities_with_average_temperature = City.average_temperatures(cities: City.all.pluck(:name), start_interval: 10, end_interval: 20)
+        expect(cities_with_average_temperature.count).to eq City.count
+        expect(cities_with_average_temperature["#{City.first.name}"]).to be_present
+      end
+    end
   end
 end
