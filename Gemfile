@@ -31,7 +31,7 @@ gem "jbuilder"
 gem 'dotenv-rails', '~> 2.8', '>= 2.8.1'
 
 # HTTP library
-gem 'typhoeus', '~> 1.4'
+gem 'httparty', '~> 0.21.0'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
@@ -71,8 +71,6 @@ group :development do
 end
 
 group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem "capybara"
-  gem "selenium-webdriver"
-  gem "webdrivers"
+  gem 'rspec-rails', '~> 6.0', '>= 6.0.1'
+  gem 'shoulda-matchers', '~> 5.0'
 end

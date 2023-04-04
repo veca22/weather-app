@@ -3,4 +3,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+  resources :cities do
+    collection do 
+      get :sorted
+      post :average_temperatures
+    end
+  end
 end
