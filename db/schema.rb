@@ -16,6 +16,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_03_121015) do
 
   create_table "cities", force: :cascade do |t|
     t.string "name"
+    t.float "average_temperature"
     t.jsonb "data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
